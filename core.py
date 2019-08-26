@@ -1,4 +1,5 @@
 import base64
+import hashlib
 
 ENCODING = 'utf-8'
 
@@ -17,3 +18,6 @@ def string2file(string, filename):
 # 将字符串转换成要传输的等长列表形式，n为传输长度
 def string2msg(string, n=60):
     return (string[i:i+n] for i in range(0, len(string), n))
+
+def file2md5(file):
+    return hashlib.md5(open(file,'rb').read()).hexdigest()

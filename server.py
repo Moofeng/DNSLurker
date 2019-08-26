@@ -1,6 +1,6 @@
 import dns.message
 import socket
-from core import string2file
+from core import string2file, file2md5
 
 
 receive_list = []
@@ -29,4 +29,7 @@ flag = ''
 while flag != 'stop':
     message, address = s.recvfrom(1024)
     flag = handler(address, message)
-string2file(''.join(receive_list), 'result')
+file = 'result'
+string2file(''.join(receive_list), file)
+md5 = file2md5(file)
+print(f"[+] MD5: {md5}")
