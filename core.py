@@ -19,5 +19,6 @@ def string2file(string, filename):
 def string2msg(string, n=60):
     return (string[i:i+n] for i in range(0, len(string), n))
 
+# ÎÄ¼ş×ªhash
 def file2md5(file):
     return hashlib.md5(open(file,'rb').read()).hexdigest()

