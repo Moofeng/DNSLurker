@@ -1,6 +1,7 @@
 import base64
 import hashlib
 
+
 ENCODING = 'utf-8'
 
 # 将文件转换成字符串
